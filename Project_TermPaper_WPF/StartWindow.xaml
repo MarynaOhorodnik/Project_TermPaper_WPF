@@ -1,0 +1,77 @@
+﻿<Window x:Class="Project_TermPaper_WPF.StartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_TermPaper_WPF"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Агентство нерухомості" Height="700" Width="1100" Closed="Window_Closed">
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <TextBlock Text="Агентство нерухомості" VerticalAlignment="Bottom" FontSize="30" FontWeight="Bold" Margin="30 0 0 0"/>
+            <TextBlock Margin="0 0 30 0" HorizontalAlignment="Right" VerticalAlignment="Bottom" Text="*Для доступу до повного функціоналу пройдіть реєстрацію та авторизацію" FontSize="14" FontWeight="Light"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1">
+            <Button Margin="30 10 0 0" Width="180" Height="40" HorizontalAlignment="Left" Content="Реєстрація" Click="ButtonReg_Click"/>
+
+            <Button Margin="0 10 30 0" Width="180" Height="40" HorizontalAlignment="Right" Content="Авторизація" Style="{StaticResource MaterialDesignFlatButton}" Click="ButtonAuth_Click"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="2">
+            <ComboBox HorizontalAlignment="Left" Width="300" Margin="30 0 30 0" x:Name="comboBoxTypeSearch" materialDesign:HintAssist.Hint="Тип" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem></ComboBoxItem>
+                <ComboBoxItem>Квартира</ComboBoxItem>
+                <ComboBoxItem>Будинок</ComboBoxItem>
+                <ComboBoxItem>Офіс</ComboBoxItem>
+            </ComboBox>
+            <ComboBox HorizontalAlignment="Right" Width="300" Margin="30 0 30 0" x:Name="comboBoxRentSaleSearch" materialDesign:HintAssist.Hint="Продаж / оренда" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem></ComboBoxItem>
+                <ComboBoxItem>Продаж</ComboBoxItem>
+                <ComboBoxItem>Оренда</ComboBoxItem>
+            </ComboBox>
+        </DockPanel>
+
+        <DockPanel Grid.Row="3">
+            <Button Content="Пошук" Margin="50 0" Click="ButtonSearch_Click"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="4" Grid.RowSpan="6">
+            <ScrollViewer Margin="30 0 30 40">
+                <StackPanel ScrollViewer.CanContentScroll="False">
+                    <ListView x:Name="objectsListSearch">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=id}">Id</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=type}">Type</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=location}">Location</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=address}">Address</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=number_rooms}">Number of rooms</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=floor}">Floor</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=square}">Square</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Price</GridViewColumn>
+                                <GridViewColumn TextBlock.TextAlignment="Center" DisplayMemberBinding="{Binding Path=rent_sale}">Rent/sale</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+
+    </Grid>
+</Window>

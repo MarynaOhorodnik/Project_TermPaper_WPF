@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="Project_TermPaper_WPF.AdminViews.AddObjects"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project_TermPaper_WPF.AdminViews"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="600" d:DesignWidth="700">
+    <Grid Background="White">
+        <StackPanel Margin="30">
+            <ComboBox x:Name="comboBoxType" materialDesign:HintAssist.Hint="Тип" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem>Квартира</ComboBoxItem>
+                <ComboBoxItem>Будинок</ComboBoxItem>
+                <ComboBoxItem>Офіс</ComboBoxItem>
+            </ComboBox>
+            <TextBox x:Name="textBoxLocation" materialDesign:HintAssist.Hint="Розташування" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxAddress" materialDesign:HintAssist.Hint="Адреса" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxNumberRooms" materialDesign:HintAssist.Hint="Кількість кімнат" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxFloor" materialDesign:HintAssist.Hint="Поверх" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxSquare" materialDesign:HintAssist.Hint="Площа" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxPrice" materialDesign:HintAssist.Hint="Ціна" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <ComboBox x:Name="comboBoxRentSale" materialDesign:HintAssist.Hint="Продаж / оренда" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem>Продаж</ComboBoxItem>
+                <ComboBoxItem>Оренда</ComboBoxItem>
+            </ComboBox>
+
+            <Button Content="Зберегти дані" Margin="0 20" Click="Button_Add_Click"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

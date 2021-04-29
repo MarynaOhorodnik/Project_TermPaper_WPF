@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Project_TermPaper_WPF.AdminViews.UsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project_TermPaper_WPF.AdminViews"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="600" d:DesignWidth="700">
+    <Grid Background="White">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="11*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="20 0">
+            <TextBox x:Name="textBoxLoginSearch" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Margin="20 0">
+            <TextBox x:Name="textBoxSurnameSearch" materialDesign:HintAssist.Hint="Прізвище" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </DockPanel>
+        
+        <DockPanel Grid.Row="2" Margin="20 0">
+            <TextBox x:Name="textBoxNameSearch" materialDesign:HintAssist.Hint="Ім'я" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+        </DockPanel>
+
+        <DockPanel Grid.Row="3" Margin="20 0">
+            <Button Content="Пошук" Click="SearchUsers_Click"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="4" Margin="20 0 20 10">
+            <ScrollViewer>
+                <StackPanel>
+                    <ListView x:Name="usersList">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=id}">Id</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=login}">Login</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=surname}">Surname</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Name</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=email}">Email</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+    </Grid>
+</UserControl>

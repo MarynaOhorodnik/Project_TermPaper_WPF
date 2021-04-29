@@ -1,0 +1,30 @@
+﻿<Window x:Class="Project_TermPaper_WPF.AuthWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project_TermPaper_WPF"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Агентство нерухомості" Height="600" Width="800" Closed="Window_Closed">
+    <Grid Background="LightGray">
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0" />
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Авторизація" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin="0 0 0 10">
+                    <Button Width="180" Height="30" HorizontalAlignment="Left" Content="Головна" Click="ButtonStart_Click"/>
+                    <Button Width="180" Height="40" HorizontalAlignment="Right" Content="Реєстрація" Click="Button_Reg_Window_Click" Style="{StaticResource MaterialDesignFlatButton}"/>
+                </Grid>
+                <TextBox x:Name="textBoxLogin" materialDesign:HintAssist.Hint="Введіть логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                <PasswordBox x:Name="passBox" materialDesign:HintAssist.Hint="Введіть пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" />
+
+
+                <Button Content="Увійти в кабінет" Margin="0 20" Click="Button_Auth_Click"/>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

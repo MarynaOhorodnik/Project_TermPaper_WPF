@@ -1,0 +1,62 @@
+﻿<UserControl x:Class="Project_TermPaper_WPF.UserViews.StatementUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Project_TermPaper_WPF.UserViews"
+             mc:Ignorable="d"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="600" d:DesignWidth="800">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="12*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="20 0">
+            <ComboBox x:Name="comboBoxStatementSearch" materialDesign:HintAssist.Hint="Статус заявки" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBoxItem>Усі</ComboBoxItem>
+                <ComboBoxItem>Створено</ComboBoxItem>
+                <ComboBoxItem>Опрацювання</ComboBoxItem>
+                <ComboBoxItem>Підтверджено</ComboBoxItem>
+                <ComboBoxItem >Скасовано</ComboBoxItem>
+            </ComboBox>
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Margin="20 0">
+            <Button Content="Пошук" Click="SearchStatementObjectsUser_Click"/>
+        </DockPanel>
+
+        <DockPanel Grid.Row="2" Margin="20 0 20 10">
+            <ScrollViewer>
+                <StackPanel>
+                    <ListView x:Name="statementObjectsListSearch" Margin="0">
+                        <ListView.View>
+                            <GridView>
+                                <!--<GridViewColumn Header="Змінити">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button x:Name="buttonChange" Content="Змінити" Padding="5" Click="buttonChangeSearch_Click" Tag="{Binding Path=id}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>-->
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=statement}">Statement</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=rent_sale}">Rent/sale</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=type}">Type</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=location}">Location</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=address}">Address</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=number_rooms}">Number of rooms</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=floor}">Floor</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=square}">Square</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Price</GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+
+                    </ListView>
+                </StackPanel>
+            </ScrollViewer>
+        </DockPanel>
+        
+    </Grid>
+</UserControl>
