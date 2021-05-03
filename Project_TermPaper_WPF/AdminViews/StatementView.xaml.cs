@@ -58,6 +58,15 @@ namespace Project_TermPaper_WPF.AdminViews
             DataTable table = result.Item1;
 
             statementObjectsList.ItemsSource = table.DefaultView;
+
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
     }
 }

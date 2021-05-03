@@ -58,6 +58,15 @@ namespace Project_TermPaper_WPF
             DataTable table = result.Item1;
 
             objectsListSearch.ItemsSource = table.DefaultView;
+
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
 
         private void ButtonReg_Click(object sender, RoutedEventArgs e)

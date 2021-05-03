@@ -9,11 +9,11 @@
              d:DesignHeight="600" d:DesignWidth="800">
     <Grid Background="White">
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="11*"/>
 
         </Grid.RowDefinitions>
         
@@ -62,21 +62,26 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Width="100">Id</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=type}">Type</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=location}">Location</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=address}">Address</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=number_rooms}">Number of rooms</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=floor}">Floor</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=square}">Square</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Price</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=rent_sale}">Rent/sale</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=client}">Client</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=statement}">Statement</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=id}" Width="100">№</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=type}">Тип</GridViewColumn>
+                                <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=rent_sale}">
+                                    <TextBlock Text="Продаж/оренда" TextAlignment="Center" TextWrapping="Wrap"/>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=location}">Розташування</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=address}">Адреса</GridViewColumn>
+                                <GridViewColumn Width="120" DisplayMemberBinding="{Binding Path=number_rooms}">
+                                    <TextBlock Text="Кількість кімнат" TextAlignment="Center" TextWrapping="Wrap"/>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=floor}">Поверх</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=square}">Площа</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=price}">Ціна</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=client}">Клієнт</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=statement}">Статус заявки</GridViewColumn>
                             </GridView>
                         </ListView.View>
 
                     </ListView>
+                    <TextBlock Margin="0 20 0 0" x:Name="ResltTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="DimGray"/>
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>

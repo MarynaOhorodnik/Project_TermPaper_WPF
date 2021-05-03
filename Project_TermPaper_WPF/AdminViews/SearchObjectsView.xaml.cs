@@ -73,6 +73,22 @@ namespace Project_TermPaper_WPF.AdminViews
             DataTable table = result.Item1;
 
             objectsListSearch.ItemsSource = table.DefaultView;
+
+            if (table.Rows.Count == 0)
+            {
+                if (type == "" && rent_sale == "" && statement == "")
+                {
+                    ResltTextBlock.Text = "Оберіть хоча б один параметр";
+                }
+                else
+                {
+                    ResltTextBlock.Text = "Немає результатів";
+                }  
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
 
         private void buttonChangeSearch_Click(object sender, RoutedEventArgs e)

@@ -8,9 +8,9 @@ namespace Project_TermPaper_WPF
 {
     public class User
     {
-        int id;
+        private int id;
 
-        string login, surname, name, email, pass;
+        private string login, surname, name, email, pass;
 
         public int Id
         {

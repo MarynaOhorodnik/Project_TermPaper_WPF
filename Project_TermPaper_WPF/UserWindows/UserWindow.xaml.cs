@@ -23,7 +23,6 @@ namespace Project_TermPaper_WPF
     /// </summary>
     public partial class UserWindow : Window
     {
-
         public UserWindow()
         {
             InitializeComponent();

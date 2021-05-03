@@ -34,6 +34,14 @@ namespace Project_TermPaper_WPF.AdminViews
 
             usersList.ItemsSource = table.DefaultView;
 
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
 
         private void SearchUsers_Click(object sender, RoutedEventArgs e)
@@ -82,6 +90,15 @@ namespace Project_TermPaper_WPF.AdminViews
             DataTable table = result.Item1;
 
             usersList.ItemsSource = table.DefaultView;
+
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
 
     }

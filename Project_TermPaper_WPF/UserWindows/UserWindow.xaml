@@ -8,7 +8,7 @@
         xmlns:views="clr-namespace:Project_TermPaper_WPF.UserViews"
         mc:Ignorable="d"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="Агентство нерухомості" MinHeight="600" MinWidth="900" Closed="Window_Closed">
+        Title="Агентство нерухомості" MinHeight="600" MinWidth="900" WindowState="Maximized" Closed="Window_Closed">
     <Window.Resources>
         <DataTemplate x:Name="ObjectsUserViewTemplate" DataType="{x:Type viewmodels:ObjectsUserViewModel}">
             <views:ObjectsUserView DataContext="{Binding}"/>
@@ -42,9 +42,15 @@
             <StackPanel>
                 <Button x:Name="UserLogin" Content="Логін" Style="{StaticResource MaterialDesignFlatButton}" Margin="0 20 0 0"/>
                 <Button Height="80" x:Name="UserHello" Content="Привітання" Margin="0 0 0 15" Style="{StaticResource MaterialDesignFlatButton}"/>
-                <Button Content="Objects View" Click="ObjectsUserView_Click" Margin="0 5"/>
-                <Button Content="Search Objects" Style="{StaticResource MaterialDesignFlatButton}" Click="SearchObjectsUserView_Click" Margin="0 5"/>
-                <Button Content="Statement View" Click="StatementUserSearch_Click" Margin="0 5"/>
+                <Button Height="50" Click="ObjectsUserView_Click" Margin="0 5">
+                    <TextBlock Text="Усі об'єкти нерухомості" TextAlignment="Center" TextWrapping="Wrap"/>
+                </Button>
+                <Button Height="50" Style="{StaticResource MaterialDesignFlatButton}" Click="SearchObjectsUserView_Click" Margin="0 5">
+                    <TextBlock Text="Пошук з параметрами" TextAlignment="Center" TextWrapping="Wrap"/>
+                </Button>
+                <Button Height="50" Click="StatementUserSearch_Click" Margin="0 5">
+                    <TextBlock Text="Перегляд заявок" TextAlignment="Center" TextWrapping="Wrap"/>
+                </Button>
             </StackPanel>
         </DockPanel>
 

@@ -10,11 +10,11 @@
     <Grid Background="White">
 
         <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Margin="20 0">
@@ -41,13 +41,14 @@
                             <GridView>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=id}">Id</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=login}">Login</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=surname}">Surname</GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Name</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=surname}">Прізвище</GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Path=name}">Ім'я</GridViewColumn>
                                 <GridViewColumn DisplayMemberBinding="{Binding Path=email}">Email</GridViewColumn>
                             </GridView>
                         </ListView.View>
 
                     </ListView>
+                    <TextBlock Margin="0 20 0 0" x:Name="ResltTextBlock" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="14" FontWeight="Medium" Foreground="DimGray"/>
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>

@@ -33,6 +33,14 @@ namespace Project_TermPaper_WPF.AdminViews
 
             objectsList.ItemsSource = table.DefaultView;
 
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
 
         private void buttonChange_Click(object sender, RoutedEventArgs e)
@@ -44,6 +52,25 @@ namespace Project_TermPaper_WPF.AdminViews
             changeObject.Show();
 
 
+        }
+
+        private void Update_Click(object sender, RoutedEventArgs e)
+        {
+            DB db = new DB();
+
+            Tuple<DataTable, bool> result = db.SelectTable("SELECT * FROM `objects`");
+            DataTable table = result.Item1;
+
+            objectsList.ItemsSource = table.DefaultView;
+
+            if (table.Rows.Count == 0)
+            {
+                ResltTextBlock.Text = "Немає результатів";
+            }
+            else
+            {
+                ResltTextBlock.Text = default;
+            }
         }
     }
 }
