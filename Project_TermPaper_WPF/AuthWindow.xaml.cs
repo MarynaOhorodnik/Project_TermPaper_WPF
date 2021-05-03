@@ -67,7 +67,6 @@ namespace Project_TermPaper_WPF
 
                 if (table.Rows.Count > 0)
                 {
-                    //_Constants.Current_login_user = login;
                     _CurrentUser.NewUser(login);
                     UserWindow userWindow = new UserWindow();
                     userWindow.Show();
