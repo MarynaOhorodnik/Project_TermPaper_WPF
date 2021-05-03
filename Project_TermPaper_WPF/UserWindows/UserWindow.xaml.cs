@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Collections;
 using System.Data;
+using Project_TermPaper_WPF.Classes;
 
 namespace Project_TermPaper_WPF
 {
@@ -22,39 +23,17 @@ namespace Project_TermPaper_WPF
     /// </summary>
     public partial class UserWindow : Window
     {
+
         public UserWindow()
         {
             InitializeComponent();
 
-            User user = CurrentUser();
-
-            string login = user.Login;
-            string surname = user.Surname;
-            string name = user.Name;
+            string login = _CurrentUser.User.Login;
+            string surname = _CurrentUser.User.Surname;
+            string name = _CurrentUser.User.Name;
 
             UserLogin.Content = "Логін: " + login;
             UserHello.Content = "Клієнт: \n" + surname + "\n" + name;
-        }
-
-        private User CurrentUser()
-        {
-            string str_command = "SELECT * FROM `users` WHERE `login` = @login";
-            DB db = new DB();
-
-            ArrayList list_str = new ArrayList() { "@login" };
-            ArrayList list_var = new ArrayList() { _Constants.Current_login_user };
-
-            Tuple<DataTable, bool> result = db.SelectTable(str_command, list_str, list_var);
-            DataTable table = result.Item1;
-
-            User user = new User();
-            user.Id = (int)table.Rows[0][0];
-            user.Login = table.Rows[0][1].ToString();
-            user.Surname = table.Rows[0][2].ToString();
-            user.Name = table.Rows[0][3].ToString();
-            user.Pass = table.Rows[0][4].ToString();
-
-            return user;
         }
 
         private void ObjectsUserView_Click(object sender, RoutedEventArgs e)
@@ -87,7 +66,6 @@ namespace Project_TermPaper_WPF
                     break;
             }
         }
-
 
 
         private void Window_Closed(object sender, EventArgs e)

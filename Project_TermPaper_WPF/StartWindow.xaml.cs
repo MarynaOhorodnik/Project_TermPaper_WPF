@@ -24,13 +24,6 @@ namespace Project_TermPaper_WPF
         public StartWindow()
         {
             InitializeComponent();
-
-            //DB db = new DB();
-
-            //Tuple<DataTable, bool> result = db.SelectTable("SELECT * FROM `objects` WHERE `client` is null");
-            //DataTable table = result.Item1;
-
-            //objectsListSearch.ItemsSource = table.DefaultView;
         }
 
         private void ButtonSearch_Click(object sender, RoutedEventArgs e)

@@ -34,10 +34,10 @@
                     <ListView x:Name="statementObjectsListSearch" Margin="0">
                         <ListView.View>
                             <GridView>
-                                <!--<GridViewColumn Header="Змінити">
+                                <!--<GridViewColumn Header="Скасувати">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <Button x:Name="buttonChange" Content="Змінити" Padding="5" Click="buttonChangeSearch_Click" Tag="{Binding Path=id}"/>
+                                            <Button x:Name="buttonChange" Content="Скасувати" Padding="5" Click="buttonChangeSearch_Click" Tag="{Binding Path=id}"/>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>-->

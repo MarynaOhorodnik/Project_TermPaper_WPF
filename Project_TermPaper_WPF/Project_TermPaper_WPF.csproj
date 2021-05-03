@@ -97,7 +97,7 @@
     <Compile Include="AdminWindows\ChangeStatement.xaml.cs">
       <DependentUpon>ChangeStatement.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\Object.cs" />
+    <Compile Include="Classes\_CurrentUser.cs" />
     <Compile Include="StartWindow.xaml.cs">
       <DependentUpon>StartWindow.xaml</DependentUpon>
     </Compile>
@@ -117,7 +117,6 @@
     <Compile Include="UserWindows\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Classes\_Constants.cs" />
     <Page Include="AdminViews\AddObjects.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

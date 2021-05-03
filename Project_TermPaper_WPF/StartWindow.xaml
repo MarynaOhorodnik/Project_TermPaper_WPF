@@ -67,11 +67,9 @@
                                 <GridViewColumn TextBlock.TextAlignment="Center" DisplayMemberBinding="{Binding Path=rent_sale}">Rent/sale</GridViewColumn>
                             </GridView>
                         </ListView.View>
-
                     </ListView>
                 </StackPanel>
             </ScrollViewer>
         </DockPanel>
-
     </Grid>
 </Window>

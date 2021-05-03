@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Project_TermPaper_WPF.Classes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Project_TermPaper_WPF.UserViews
     /// </summary>
     public partial class StatementUserView : UserControl
     {
+
         public StatementUserView()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Project_TermPaper_WPF.UserViews
         private void SearchStatementObjectsUser_Click(object sender, RoutedEventArgs e)
         {
             string statement = comboBoxStatementSearch.Text;
-            string login_user = _Constants.Current_login_user;
+            string login_user = _CurrentUser.User.Login;
             string str_command;
 
             if (statement == "Усі")

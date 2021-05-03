@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MySql.Data.MySqlClient;
+using Project_TermPaper_WPF.Classes;
 
 namespace Project_TermPaper_WPF
 {
@@ -66,7 +67,8 @@ namespace Project_TermPaper_WPF
 
                 if (table.Rows.Count > 0)
                 {
-                    _Constants.Current_login_user = login;
+                    //_Constants.Current_login_user = login;
+                    _CurrentUser.NewUser(login);
                     UserWindow userWindow = new UserWindow();
                     userWindow.Show();
                     this.Hide();
@@ -91,8 +93,6 @@ namespace Project_TermPaper_WPF
             mainWindow.Show();
             Hide();
         }
-
-
 
         public void clearTextBox(TextBox textbox)
         {

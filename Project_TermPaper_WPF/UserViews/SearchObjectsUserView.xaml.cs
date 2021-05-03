@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Project_TermPaper_WPF.Classes;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Project_TermPaper_WPF.UserViews
     /// </summary>
     public partial class SearchObjectsUserView : UserControl
     {
+
         public SearchObjectsUserView()
         {
             InitializeComponent();
@@ -64,23 +66,15 @@ namespace Project_TermPaper_WPF.UserViews
             switch (resultMes)
             {
                 case MessageBoxResult.Yes:
-                    string str_command1 = "SELECT * FROM `users` WHERE `login` = @login";
+
                     DB db = new DB();
-
-                    ArrayList list_str1 = new ArrayList() { "@login" };
-                    ArrayList list_var1 = new ArrayList() { _Constants.Current_login_user };
-
-                    Tuple<DataTable, bool> result = db.SelectTable(str_command1, list_str1, list_var1);
-                    DataTable table = result.Item1;
-
-                    string user_login = table.Rows[0][1].ToString();
 
                     int id = Convert.ToInt32(((Button)(sender)).Tag);
 
                     string str_command2 = "UPDATE `objects` SET `client` = @client, `statement` = @statement WHERE `objects`.`id` = @id";
 
                     ArrayList list_str2 = new ArrayList() { "@id", "@client", "@statement" };
-                    ArrayList list_var2 = new ArrayList() { id, user_login, "Створено" };
+                    ArrayList list_var2 = new ArrayList() { id, _CurrentUser.User.Login, "Створено" };
 
                     bool flag = db.EditTable(str_command2, list_str2, list_var2);
 

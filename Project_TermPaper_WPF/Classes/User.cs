@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Project_TermPaper_WPF
 {
-    class User
+    public class User
     {
-        public int id;
+        int id;
 
-        public string login, surname, name, email, pass;
+        string login, surname, name, email, pass;
 
         public int Id
         {
@@ -57,6 +57,16 @@ namespace Project_TermPaper_WPF
             this.name = name;
             this.email = email;
             this.pass = pass;
+        }
+
+        public User(User _user)
+        {
+            this.id = _user.Id;
+            this.login = _user.Login;
+            this.surname = _user.Surname;
+            this.name = _user.Name;
+            this.email = _user.Email;
+            this.pass = _user.Pass;
         }
     }
 }
