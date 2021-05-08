@@ -18,19 +18,19 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" Margin="20 0">
-            <TextBox x:Name="textBoxLoginSearch" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxLoginSearch" TextChanged="textBoxLoginSearch_TextChanged" materialDesign:HintAssist.Hint="Логін" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </DockPanel>
 
         <DockPanel Grid.Row="1" Margin="20 0">
-            <TextBox x:Name="textBoxSurnameSearch" materialDesign:HintAssist.Hint="Прізвище" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxSurnameSearch" TextChanged="textBoxSurnameSearch_TextChanged" materialDesign:HintAssist.Hint="Прізвище" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </DockPanel>
         
         <DockPanel Grid.Row="2" Margin="20 0">
-            <TextBox x:Name="textBoxNameSearch" materialDesign:HintAssist.Hint="Ім'я" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+            <TextBox x:Name="textBoxNameSearch" TextChanged="textBoxNameSearch_TextChanged" materialDesign:HintAssist.Hint="Ім'я" Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
         </DockPanel>
 
         <DockPanel Grid.Row="3" Margin="20 0">
-            <Button Content="Пошук" Click="SearchUsers_Click"/>
+            <Button Content="Пошук" />
         </DockPanel>
 
         <DockPanel Grid.Row="4" Margin="20 0 20 10">

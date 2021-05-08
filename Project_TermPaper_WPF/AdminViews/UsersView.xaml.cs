@@ -44,7 +44,22 @@ namespace Project_TermPaper_WPF.AdminViews
             }
         }
 
-        private void SearchUsers_Click(object sender, RoutedEventArgs e)
+        private void textBoxLoginSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchUser();
+        }
+
+        private void textBoxSurnameSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchUser();
+        }
+
+        private void textBoxNameSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            SearchUser();
+        }
+
+        private void SearchUser()
         {
             string login = textBoxLoginSearch.Text.Trim();
             string surname = textBoxSurnameSearch.Text.Trim();
@@ -100,7 +115,6 @@ namespace Project_TermPaper_WPF.AdminViews
                 ResltTextBlock.Text = default;
             }
         }
-
     }
 
 }
